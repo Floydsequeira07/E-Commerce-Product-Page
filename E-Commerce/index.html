@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="card.css">
+    <script src="https://kit.fontawesome.com/f30fac2c61.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran:wght@200&family=Courgette&family=Edu+TAS+Beginner:wght@700&family=Lato:wght@300;900&family=Mukta:wght@700&family=Mulish:wght@300&family=Open+Sans&family=PT+Sans:ital,wght@1,700&family=Poppins:wght@300&family=Raleway:wght@100&family=Roboto+Condensed:wght@700&family=Roboto+Slab&family=Roboto:wght@300&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <script>
+        // Array to store selected items
+        let cartItems = [];
+
+        // Function to add an item to the cart
+        function addToCart(item) {
+            cartItems.push(item);
+            alert("Item added to the cart!");
+        }
+
+        // Function to view the cart
+        function viewCart() {
+            if (cartItems.length === 0) {
+                alert("Your cart is empty.");
+            } else {
+                let cartContent = "Cart Items:\n";
+                for (let i = 0; i < cartItems.length; i++) {
+                    cartContent += (i + 1) + ". " + cartItems[i] + "\n";
+                }
+                alert(cartContent);
+            }
+        }
+
+        function clk(newImg) {
+            let getImg = document.getElementById("imgs");
+            getImg.src = newImg.src;
+        }
+    </script>
+</head>
+<body>
+    <div class="card">
+        <div class="img">
+            <img src="puma.jpeg" alt="" onclick="clk(this)"> <br>
+            <img src="h1.jpeg" alt=""   onclick="clk(this)"> <br>
+            <img src="h2.jpeg" alt=""  onclick="clk(this)"> <br>
+            <img src="h3.jpeg" alt=""  onclick="clk(this)"> <br>
+            <img src="h4.jpeg" alt=""  onclick="clk(this)"> <br>
+        </div>
+        <div class="left">
+            <img src="puma.jpeg" id="imgs" alt="">
+        </div>
+
+        <div class="right">
+            <h3>PUMA</h3>
+            <h1>ESS ELEVATED Tee Men Solid Crew Neck<br>Pure Cotton Black T-Shirt</h1>
+            <h1>₹1050</h1>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+            <h3>Brand: PUMA</h3>
+            <h4>Available Offer's</h4>
+            <p>: Special PriceGet extra 5% off (price inclusive of cashback/coupon)</p>
+            <p>: Partner OfferPurchase now & get a surprise cashback coupon for November /December 2023</p>
+            <p>: Partner OfferSign up for Flipkart Pay Later and get Flipkart Gift Card worth up to ₹1000*</p>
+            <p>: Apply for a  Flipkart Axis Bank credit card to get a 5% cashback  </p>
+             <button onclick="addToCart('PUMA ESS ELEVATED Tee Men Solid Crew Neck Pure Cotton Black T-Shirt')">Add To Cart</button>
+             
+             <button onclick="viewCart()">View Cart</button>
+        </div>
+    </div>
+</body>
+</html>
